@@ -1,5 +1,5 @@
 {
-	"name": "src/kornyellow-lib",
+	"name": "kornyellow/kornyellow-lib",
 	"description": "Little KornYellow framework for easier making money",
 	"type": "library",
 	"license": "MIT",
