@@ -1,6 +1,6 @@
 <?php
 
-namespace libraries\korn;
+namespace KornyellowLib;
 
 class KornConfig {
 	public static string $databaseProduction = "kornyellow_production";
