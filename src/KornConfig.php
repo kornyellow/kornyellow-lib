@@ -7,6 +7,7 @@ class KornConfig {
 	public static string $databaseBeta = "kornyellow_beta";
 
 	public static string $websiteName = "KORNYELLOW";
+	public static string $websiteDomain = "kornyellow.com";
 	public static string $websiteAuthor = "กร โรจน์รัตนปัญญา";
 	public static string $websiteOwner = "kornkubzaza@gmail.com";
 	public static string $defaultTitle = "หน้าหลัก";
