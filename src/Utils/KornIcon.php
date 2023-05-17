@@ -140,7 +140,7 @@ class KornIcon {
 		return $this;
 	}
 	public function more(string $classes): self {
-		$this->additionalClasses = $classes;
+		$this->additionalClasses .= $classes." ";
 
 		return $this;
 	}
