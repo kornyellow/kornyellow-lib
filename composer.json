@@ -16,7 +16,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"korn\\kornyellow-lib\\": "src"
+			"KornyellowLib\\": "src"
 		}
 	},
 	"require-dev": {
