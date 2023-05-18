@@ -14,9 +14,12 @@ class KornQuery {
 	private int $affectedRows;
 	private int $insertedID;
 
-	public function __construct(KornQueryBuilder $queryBuilder = null) {
-		if ($queryBuilder)
-			self::query($queryBuilder->build());
+	public function __construct(KornQueryBuilder $queryBuilder) {
+		self::query($queryBuilder->build());
+	}
+
+	public static function execute(KornQueryBuilder $queryBuilder): int {
+		return (new KornQuery($queryBuilder))->affectedRows();
 	}
 
 	private function query(string $query): void {
