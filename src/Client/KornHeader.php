@@ -49,6 +49,6 @@ class KornHeader {
 		self::$description = $description ?? KornConfig::$defaultDescription;
 		self::$abstract = $abstract ?? KornConfig::$defaultAbstract;
 
-		include("controller/header.php");
+		include(KornConfig::$controllerFolder."/header.php");
 	}
 }

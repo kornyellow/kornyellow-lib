@@ -14,4 +14,6 @@ class KornConfig {
 	public static string $defaultDescription = "";
 	public static string $defaultAbstract = "";
 	public static string $defaultKeywords = "";
+
+	public static string $controllerFolder = "controller";
 }
