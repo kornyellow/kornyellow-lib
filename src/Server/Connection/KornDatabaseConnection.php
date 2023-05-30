@@ -2,6 +2,7 @@
 
 namespace KornyellowLib\Server\Connection;
 
+use Exception;
 use KornyellowLib\KornConfig;
 use KornyellowLib\Utils\KornCredential;
 use KornyellowLib\Utils\KornDebug;
@@ -31,11 +32,16 @@ class KornDatabaseConnection {
 
 		$connection = mysqli_init();
 
-		if (!$connection->real_connect("p:localhost", $username, $password, $databaseName))
-			KornDebug::printError("ERROR: MySQL connection error", mysqli_connect_error());
-		$connection->set_charset("utf8");
+		try {
+			if (!$connection->real_connect("p:localhost", $username, $password, $databaseName))
+				KornDebug::printError("ERROR: MySQL connection error", mysqli_connect_error());
+			$connection->set_charset("utf8");
+		} catch (Exception $e) {
+			KornDebug::printError("ERROR: MySQL connection error", $e->getMessage());
+		}
 
 		self::$connection = $connection;
+
 		return $connection;
 	}
 	public static function closeConnection(): void {
