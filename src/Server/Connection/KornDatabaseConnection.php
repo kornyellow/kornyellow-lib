@@ -34,10 +34,10 @@ class KornDatabaseConnection {
 
 		try {
 			if (!$connection->real_connect("p:localhost", $username, $password, $databaseName))
-				KornDebug::printError("ERROR: MySQL connection error", mysqli_connect_error());
+				KornDebug::printError("ERROR: MySQL connection errors", mysqli_connect_error());
 			$connection->set_charset("utf8");
 		} catch (Exception $e) {
-			KornDebug::printError("ERROR: MySQL connection error", $e->getMessage());
+			KornDebug::printError("ERROR: MySQL connection errors", $e->getMessage());
 		}
 
 		self::$connection = $connection;

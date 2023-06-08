@@ -2,6 +2,7 @@
 
 namespace KornyellowLib\Server\Query;
 
+use Exception;
 use KornyellowLib\Server\Connection\KornDatabaseConnection;
 use KornyellowLib\Utils\KornDebug;
 use mysqli_stmt;
@@ -26,7 +27,11 @@ class KornStatement {
 		if (!$statement)
 			KornDebug::printError("ERROR: Failed to prepare query", $connection->error);
 
-		$statement->execute();
+		try {
+			$statement->execute();
+		} catch (Exception $e) {
+			KornDebug::printError("ERROR: Failed to execute query", $e->getMessage());
+		}
 
 		return $statement;
 	}

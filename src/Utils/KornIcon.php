@@ -10,17 +10,22 @@ class KornIcon {
 		private int             $marginRight = 0,
 		private bool            $isFullWidth = true,
 		private string          $additionalClasses = "",
+		private bool            $isEmpty = false,
 	) {}
 
 	public function __toString(): string {
+		if ($this->isEmpty)
+			return "";
+
+		$class = trim(preg_replace("/\s+/", " ", "
+			fa-solid ".($this->additionalClasses)."
+			fa-".($this->iconName)." ".($this->isFullWidth ? "fa-fw" : "")." 
+			ms-".($this->marginLeft)." me-".($this->marginRight)."
+			".(is_null($this->size) ? "" : "fs-".($this->size))."
+		"));
+
 		return "
-			<i class='
-				fa-solid $this->additionalClasses 
-				".($this->isFullWidth ? "fa-fw" : "")." fa-$this->iconName
-				ms-$this->marginLeft me-$this->marginRight
-				fa-".($this->size ?? "$this->size")."
-			'>
-			</i>
+			<i class='$class'></i>
 		";
 	}
 	public function getIconName(): string { return $this->iconName; }
@@ -513,6 +518,13 @@ class KornIcon {
 		];
 	}
 
+	public static function emptyIcon(): self { return (new KornIcon(""))->setEmpty(); }
+	private function setEmpty(): self {
+		$this->isEmpty = true;
+
+		return $this;
+	}
+
 	// PAGE 1
 	public static function n0(): self { return new KornIcon("0"); }
 	public static function n1(): self { return new KornIcon("1"); }
@@ -880,6 +892,10 @@ class KornIcon {
 	// PAGE 3
 
 
+	// OTHERS
+	public static function fileLines(): self { return new KornIcon("file-lines"); }
+	public static function house(): self { return new KornIcon("house"); }
+	public static function key(): self { return new KornIcon("key"); }
 	public static function cog(): self { return new KornIcon("cog"); }
 	public static function exclamation(): self { return new KornIcon("exclamation"); }
 	public static function ellipsisVertical(): self { return new KornIcon("ellipsis-vertical"); }
@@ -898,6 +914,7 @@ class KornIcon {
 	public static function turnDown(): self { return new KornIcon("turn-down"); }
 	public static function turnUp(): self { return new KornIcon("turn-up"); }
 	public static function user(): self { return new KornIcon("user"); }
+	public static function users(): self { return new KornIcon("users"); }
 	public static function wallet(): self { return new KornIcon("wallet"); }
 	public static function tag(): self { return new KornIcon("tag"); }
 }

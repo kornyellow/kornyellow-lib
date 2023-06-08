@@ -9,6 +9,7 @@ class KornHeader {
 	private static string|null $description = null;
 	private static string|null $abstract = null;
 	private static string|null $canonical = null;
+
 	public static function getTitle(): string {
 		$title = self::$title ?? KornConfig::$defaultTitle;
 		if ($title !== KornConfig::$defaultTitle) {

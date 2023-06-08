@@ -34,13 +34,13 @@ class KornFTP {
 			"README.md",
 			"update.php",
 			"reupload.php",
-			"vendor/kornyellow/kornyellow-lib/.git",
-			"vendor/kornyellow/kornyellow-lib/.gitignore",
-			"vendor/kornyellow/kornyellow-lib/.idea",
-			"vendor/kornyellow/kornyellow-lib/composer.json",
-			"vendor/kornyellow/kornyellow-lib/composer.lock",
-			"vendor/kornyellow/kornyellow-lib/composer.phar",
-			"vendor/kornyellow/kornyellow-lib/README.md",
+			"supplier/kornyellow/kornyellow-lib/.git",
+			"supplier/kornyellow/kornyellow-lib/.gitignore",
+			"supplier/kornyellow/kornyellow-lib/.idea",
+			"supplier/kornyellow/kornyellow-lib/composer.json",
+			"supplier/kornyellow/kornyellow-lib/composer.lock",
+			"supplier/kornyellow/kornyellow-lib/composer.phar",
+			"supplier/kornyellow/kornyellow-lib/README.md",
 		];
 
 		echo "\n\033[32mStart updating project please wait...\n";
