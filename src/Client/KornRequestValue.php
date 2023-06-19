@@ -23,6 +23,12 @@ class KornRequestValue {
 	public function toStringNullable(): string|null {
 		return KornString::cleanStringNullable($this->value);
 	}
+	public function toStringRaw(): string {
+		return is_string($this->value) ? trim($this->value) : "";
+	}
+	public function toStringRawNullable(): string|null {
+		return is_string($this->value) ? trim($this->value) : null;
+	}
 	public function isNull(): bool {
 		return $this->value === null;
 	}

@@ -11,8 +11,8 @@
 	],
 	"require": {
 		"php": "^8.1",
-		"ext-mysqli": "*",
-		"ext-ftp": "*"
+		"ext-ftp": "*",
+		"ext-mysqli": "*"
 	},
 	"autoload": {
 		"psr-4": {
